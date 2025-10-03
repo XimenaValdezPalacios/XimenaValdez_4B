@@ -1,0 +1,40 @@
+---
+title: "Práctica 2 - Papelería"
+author: "Ximena Lizeth"
+format: pdf
+---
+
+# Menú de Papelería
+
+```{python}
+productos = ["lapiz", "cuaderno", "borrador"]
+precios = [50, 70, 40]
+
+def calcular_total(cantidades, precios):
+    total = 0
+    for i in range(len(cantidades)):
+        total += cantidades[i] * precios[i]
+    return total
+
+print("MENU DE PAPELERIA - BIENVENIDO")
+print("=" * 35)
+
+# Simulación de cantidades (en vez de input, porque Quarto no es interactivo)
+cantidades = [2, 1, 3]   # Ejemplo: 2 lápices, 1 cuaderno, 3 borradores
+
+total = calcular_total(cantidades, precios)
+
+print("\n--- TICKET DE COMPRA ---")
+print("Papelería ")
+print("-----------------------")
+print("Producto\tCant.\tPrecio\tSubtotal")
+print("-----------------------")
+
+for i in range(len(productos)):
+    subtotal = cantidades[i] * precios[i]  
+    print(f"{productos[i].capitalize()}\t\t{cantidades[i]}\t${precios[i]}\t${subtotal}")
+
+print("-----------------------")
+print(f"TOTAL:\t\t\t\t${total}")
+print("-----------------------")
+print("¡Gracias por su compra!")

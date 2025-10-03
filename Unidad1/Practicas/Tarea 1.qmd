@@ -1,0 +1,46 @@
+---
+title: "Práctica 2 - Papelería"
+author: "Ximena Lizeth"
+format: pdf
+---
+
+# Menú de Papelería
+
+```{python}
+# Lista de productos y precios
+productos = ["lapiz", "cuaderno", "borrador"]
+precios = [50, 70, 40]
+
+# Función para calcular el total
+def calcular_total(cantidades, precios):
+    total = 0
+    for i in range(len(cantidades)):
+        total += cantidades[i] * precios[i]
+    return total
+
+# Mensaje de bienvenida
+print("MENU DE PAPELERIA - BIENVENIDO")
+print("=" * 35)
+
+# Cantidades de ejemplo
+cantidades = [2, 1, 3]  # 2 lápices, 1 cuaderno, 3 borradores
+
+# Calcular total
+total = calcular_total(cantidades, precios)
+
+# Imprimir ticket de compra
+print("\n--- TICKET DE COMPRA ---")
+print("Papelería")
+print("----------------------------")
+print("Producto   Cant.  Precio  Subtotal")
+print("----------------------------")
+
+# Mostrar cada producto con su subtotal
+for i in range(len(productos)):
+    subtotal = cantidades[i] * precios[i]
+    print(f"{productos[i].capitalize():<10} {cantidades[i]:<5} ${precios[i]:<6} ${subtotal}")
+
+print("----------------------------")
+print(f"TOTAL: {'':<16} ${total}")
+print("----------------------------")
+print("¡Gracias por su compra!")
